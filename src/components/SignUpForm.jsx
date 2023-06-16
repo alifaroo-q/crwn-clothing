@@ -53,8 +53,10 @@ const SignUpForm = () => {
 
   return (
     <div className="flex flex-col w-[25em] gap-6">
-      <h2 className="text-2xl font-semibold">Don't have an account</h2>
-      <span className="">Sign up with your email and password</span>
+      <div>
+        <h2 className="text-2xl font-semibold">I do not have a account</h2>
+        <p className="mt-2">Sign up with your email and password</p>
+      </div>
       <form onSubmit={handleSubmit}>
         <FormInput
           label="Display Name"

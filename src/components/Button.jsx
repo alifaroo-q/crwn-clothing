@@ -10,7 +10,7 @@ const Button = ({ children, buttonType, ...otherProps }) => {
   return (
     <button
       {...otherProps}
-      className={`${buttonTypes[buttonType]} min-w-[165px] w-auto h-12 uppercase tracking-wider px-9 text-lg cursor-pointer flex justify-center items-center font-bold transition-all duration-300 ease-linear`}
+      className={`${buttonTypes[buttonType]} min-w-[10rem] w-auto h-12 uppercase px-4 text-[15px] cursor-pointer flex justify-center items-center font-[600] transition-all duration-300 ease-linear shadow-lg`}
     >
       {children}
     </button>
