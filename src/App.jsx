@@ -1,6 +1,7 @@
 import Home from "./routes/Home/Home";
 import Authentication from "./routes/Authentication/Authentication";
 import Navigation from "./routes/Navigation/Navigation";
+
 import { Routes, Route } from "react-router-dom";
 
 function App() {
