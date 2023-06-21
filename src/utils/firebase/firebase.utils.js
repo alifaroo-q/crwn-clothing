@@ -1,16 +1,16 @@
 // Import necessary functions and modules from the Firebase SDK
 import { initializeApp } from "firebase/app";
 import {
-  getAuth,
-  signOut,
-  signInWithPopup,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
+  getAuth,
   onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
 } from "firebase/auth";
 
-import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, getDoc, getFirestore, setDoc } from "firebase/firestore";
 
 // Configuration object containing Firebase project details
 const firebaseConfig = {
@@ -73,16 +73,21 @@ export const createUserDocumentFromAuth = async (
   return userDocRef;
 };
 
+// Function to create a new user with email and password
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await createUserWithEmailAndPassword(auth, email, password);
 };
 
+// Function to sign in a user with email and password
 export const signInAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
   return await signInWithEmailAndPassword(auth, email, password);
 };
 
+// Function to sign out the currently authenticated user
 export const signOutUser = async () => await signOut(auth);
 
-export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
+// Function to listen for changes in the authentication state
+export const onAuthStateChangedListener = (callback) =>
+  onAuthStateChanged(auth, callback);
